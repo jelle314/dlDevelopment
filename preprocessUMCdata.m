@@ -1,4 +1,18 @@
 function preprocessUMCdata(folder, options)
+    % Function to convert output from Philips 7T scanner to a format
+    % mrVista can handle
+    %
+    % INPUT:
+    %
+    %   - folder: the folder where the mrVista session should be (optional)
+    %             default = pwd
+    %   - options: a struct containing the options for R2A (optional)
+    %             default = default settings listed below
+    %
+    % NOTE: the script assumes that there will be a subfolder called
+    % 'Scanner output' containing your PAR files inside the folder. If this
+    % is not the case the script will NOT WORK.
+    %
 
     if ~exist('folder','var') || isempty(folder)
         folder = pwd;
